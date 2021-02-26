@@ -1,63 +1,52 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 
+import { Box } from './components/buttons/box/Box';
+import { SelectedBox } from './components/buttons/selectedBox/SelectedBox';
+import { Card } from './components/card/Card';
 import { CURRENCIES } from './data/data';
 
 const App = () => {
   const [currencies, setCurrencies] = useState(CURRENCIES);
-  console.log('currencies', currencies);
 
-  const onCheckboxChange = (id: number) => {
+  const handleOnClickToggle = (index: number) => {
     const currenciesClone = [...currencies];
-    // eslint-disable-next-line max-len
-    currenciesClone[id].isSelected = !currenciesClone[id].isSelected;
+    currenciesClone[index].isSelected = !currenciesClone[index].isSelected;
     setCurrencies(currenciesClone);
   };
 
-  // eslint-disable-next-line max-len
-  const selectedCurrencies = currencies.filter(({ isSelected }) => isSelected);
-  console.log('selectedCurrencies: ', selectedCurrencies);
-  
   return (
-    <div>
-      <div className="container-top">
-        {currencies.map(({ id, label, isSelected }) => {
-          return (
-            selectedCurrencies && (
-              <div key={id}>
-                <label htmlFor={label}>
-                  <input
-                    id={label}
-                    type="checkbox"
-                    name={label}
-                    checked={isSelected}
-                    onChange={() => onCheckboxChange(id)}
-                  />
-                  {label}
-                </label>
-              </div>
-            )
-          );
-        })}
-      </div>
-      <div className="container-bottom">
-        {currencies.map(({ id, label, isSelected }) => {
-          return (
-            <div key={id}>
-              <label htmlFor={label}>
-                <input
-                  id={label}
-                  type="checkbox"
-                  name={label}
-                  checked={isSelected}
-                  onChange={() => onCheckboxChange(id)}
-                />
+    <div className="container">
+      <Card>
+        <div className="row">
+          <div className="col-xs-4">
+            {currencies.map(
+              ({ label, isSelected }, index) =>
+                isSelected && (
+                  <SelectedBox 
+                    key={label} 
+                    OnClickCancle={() => handleOnClickToggle(index)}
+                  >
+                    <span>{label} x</span>
+                  </SelectedBox>
+                )
+            )}
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-4">
+            {currencies.map(({ label, isSelected }, index) => (
+              <Box
+                label={label}
+                selected={isSelected}
+                key={label}
+                OnClickToggle={() => handleOnClickToggle(index)}
+              >
                 {label}
-              </label>
-            </div>
-          );
-        })}
-      </div>
+              </Box>
+            ))}
+          </div>
+        </div>
+      </Card>
     </div>
   );
 };
