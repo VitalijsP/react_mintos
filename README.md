@@ -20,5 +20,5 @@ You will also see any lint errors in the console.
 ##  About project
 
 The project was divided into components. Module SCSS was used for styling.
-if I had more time for the project, I would add @media queries to improve application responsive design.
+If I had more time for the project, I would add @media queries to improve application responsive design.
 
