@@ -1,17 +1,16 @@
 export interface Currency {
-  id: number;
   label: string;
-  isSelected:boolean;
+  isSelected: boolean;
 }
 
 export const CURRENCIES: Currency[] = [
-  { id: 0, label: 'EUR', isSelected: false },
-  { id: 1, label: 'PLN', isSelected: false },
-  { id: 2, label: 'GEL', isSelected: false },
-  { id: 3, label: 'DKK', isSelected: false },
-  { id: 4, label: 'CZK', isSelected: false },
-  { id: 5, label: 'GBP', isSelected: false },
-  { id: 6, label: 'SEK', isSelected: false },
-  { id: 7, label: 'USD', isSelected: false },
-  { id: 8, label: 'RUB', isSelected: false },
+  { label: 'EUR', isSelected: false },
+  { label: 'PLN', isSelected: false },
+  { label: 'GEL', isSelected: false },
+  { label: 'DKK', isSelected: false },
+  { label: 'CZK', isSelected: false },
+  { label: 'GBP', isSelected: false },
+  { label: 'SEK', isSelected: false },
+  { label: 'USD', isSelected: false },
+  { label: 'RUB', isSelected: false },
 ];

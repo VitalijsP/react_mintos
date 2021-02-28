@@ -6,6 +6,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+
 // import { CURRENCIES } from './data/data';
 ReactDOM.render(
   <React.StrictMode>

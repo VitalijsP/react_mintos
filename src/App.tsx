@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { Box } from './components/buttons/box/Box';
-import { SelectedBox } from './components/buttons/selectedBox/SelectedBox';
+import { Box } from './components/box/Box';
+import { BoxSelected } from './components/boxSelected/BoxSelected';
 import { Card } from './components/card/Card';
 import { CURRENCIES } from './data/data';
 
@@ -15,39 +15,33 @@ const App = () => {
   };
 
   return (
-    <div className="container">
-      <Card>
-        <div className="row">
-          <div className="col-xs-4">
-            {currencies.map(
-              ({ label, isSelected }, index) =>
-                isSelected && (
-                  <SelectedBox 
-                    key={label} 
-                    OnClickCancle={() => handleOnClickToggle(index)}
-                  >
-                    <span>{label} x</span>
-                  </SelectedBox>
-                )
-            )}
+    <Card>
+      <div className="row margin-bottom--30">
+        {currencies.map(
+          ({ label, isSelected }, index) =>
+            isSelected && (
+              <div className="col-xs-6 col-sm-4 col-md-4 margin-bottom--10" key={label}>
+                <BoxSelected
+                  label={label}
+                  selected={isSelected}
+                  onClickCancel={() => handleOnClickToggle(index)}
+                />
+              </div>
+            )
+        )}
+      </div>
+      <div className="row">
+        {currencies.map(({ label, isSelected }, index) => (
+          <div className="col-xs-12 col-sm-6  col-md-4 margin-bottom--10" key={label}>
+            <Box
+              label={label}
+              selected={isSelected}
+              onClickCancel={() => handleOnClickToggle(index)}
+            />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-xs-4">
-            {currencies.map(({ label, isSelected }, index) => (
-              <Box
-                label={label}
-                selected={isSelected}
-                key={label}
-                OnClickToggle={() => handleOnClickToggle(index)}
-              >
-                {label}
-              </Box>
-            ))}
-          </div>
-        </div>
-      </Card>
-    </div>
+        ))}
+      </div>
+    </Card>
   );
 };
 

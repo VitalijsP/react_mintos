@@ -1,0 +1,14 @@
+@import '../../styles/index.scss';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  border: 1px solid $Gray-3;
+  border-radius: 5px;
+  padding: 10px 10px 0 10px;
+  box-shadow: 2px 2px 12px -2px $Gray-3;
+}

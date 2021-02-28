@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  position: relative;
+  display: flex;
+  padding-right: 8px;
+  padding-top: 8px;
+}
+
+.label {
+  width: 100%;
+  background-color: $Gray-1;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 3px 0;
+  text-transform: lowercase; // optional
+}
+
+.button {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: -1px;
+  right: 0;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  padding: 0px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: $Snow;
+  border: 2px solid $Snow;
+  background-color: $Gray-4;
+
+  &:hover {
+    color: $Gray-4;
+    border: 2px solid $Gray-4;
+    background-color: $Snow;
+  }
+}

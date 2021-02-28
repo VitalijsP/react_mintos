@@ -1,0 +1,35 @@
+@import '../../styles/variables.scss';
+
+.wrapper {
+  display: flex;
+  border: 1px solid $Gray-3;
+  border-radius: 2px;
+}
+
+.button {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 8px 4px;
+  background-color: $Gray-0;
+
+  &:hover {
+    background-color: $Gray-2;
+  }
+}
+
+.selected {
+  background-color: $Snow;
+}
+
+.label {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  color: $Ocean;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 13px;
+}
