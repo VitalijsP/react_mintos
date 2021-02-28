@@ -22,6 +22,9 @@
 
 .selected {
   background-color: $Snow;
+  &:hover {
+    background-color: $Snow;
+  }
 }
 
 .label {

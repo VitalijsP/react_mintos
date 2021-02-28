@@ -2,7 +2,7 @@
   "name": "mintos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/VitalijsP",
+  "homepage": "https://github.com/VitalijsP/react_mintos/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@testing-library/jest-dom": "^5.11.5",
