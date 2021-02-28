@@ -8,14 +8,13 @@ type Props = {
   onClickCancel: () => void;
 };
 
-export const BoxSelected: FC<Props> = ({ selected, label, onClickCancel }) => {
+export const BoxSelected: FC<Props> = ({ label, onClickCancel }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.label}>{label}</div>
       <button
         type="button"
-        // className={styles.button}
-        className={`${styles.button} ${selected ? styles.dark : styles.dark}`}
+        className={styles.button}
         onClick={onClickCancel}
       >
         ✖
